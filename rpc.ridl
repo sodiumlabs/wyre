@@ -1,0 +1,29 @@
+webrpc = v1             # version of webrpc schema format (ridl or json)
+
+name = wyre-service     # name of your backend app
+version = v0.0.1        # version of your schema
+
+message GetWyreDepositCurrenciesQuery
+  - networkId: string
+
+message AbstractTokenInfo
+  - name: string
+  - icon: string
+
+message RequestWyreDepositRequest
+  - amount: uint
+  - walletAddress: string
+  - sourceCurrency: string
+  - destCurrency: string
+  - networkId: string
+
+message PreReserveResponse
+  - fees: map<string,float64>
+  - exchangeRate: float64
+  - destAmount: float64
+
+service WyreService
+  - Ping()
+  - GetWyreDepositCurrencies() => (receiveCurrencies: []AbstractTokenInfo, canBuyTokens: []AbstractTokenInfo)
+  - RequestWyrePreDeposit(request: RequestWyreDepositRequest) => (response: PreReserveResponse)
+  - RequestWyreDeposit(request: RequestWyreDepositRequest) => (deposit: string)
