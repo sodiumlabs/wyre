@@ -12,6 +12,11 @@ import (
 
 const WYRE_ACCOUNT_ID = "AC_NLVGLA2DCCD"
 
+var networks = map[string]string{
+	"80001": "matic",
+	"137":   "matic",
+}
+
 type WyreService2 struct {
 	apiKey   string
 	endpoint string
@@ -66,7 +71,7 @@ func (svc *WyreService2) RequestWyrePreDeposit(ctx context.Context, request *Req
 		request.Amount,
 		request.SourceCurrency,
 		request.DestCurrency,
-		request.NetworkId,
+		networks[request.NetworkId],
 	)
 }
 
@@ -79,7 +84,7 @@ func (svc *WyreService2) RequestWyreDeposit(
 		request.Amount,
 		request.SourceCurrency,
 		request.DestCurrency,
-		request.NetworkId,
+		networks[request.NetworkId],
 	)
 }
 

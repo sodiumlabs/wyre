@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: 798321202204.dkr.ecr.ap-southeast-1.amazonaws.com/wyre-server
   pullPolicy: IfNotPresent
-  tag: 08dd58e35f54b3aa3a9534c669b151854b3a0b40
+  tag: 1f976a59d930c7cd103c8a30d3a8dc5c56dbc412
 
 serviceAccount:
   # Specifies whether a service account should be created
