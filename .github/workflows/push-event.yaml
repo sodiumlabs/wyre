@@ -7,7 +7,7 @@ on:
 
 jobs:
   push-trigger-build-image:
-    uses: sodiumlabs/wallet-server/.github/workflows/buildx.yaml@main
+    uses: sodiumlabs/wyre/.github/workflows/buildx.yaml@main
     with:
       build_env: dev
     secrets:
