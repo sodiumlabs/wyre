@@ -26,9 +26,11 @@ func main() {
 		w.Write([]byte("."))
 	})
 
+	svc := service.NewWyreServiceWithENV()
 	webrpcHandler := service.NewWyreServiceServer(
-		NewWyreServiceWithENV(),
+		svc,
 	)
 	r.Handle("/*", webrpcHandler)
+	fmt.Printf("listen :%s", port)
 	http.ListenAndServe(fmt.Sprintf(":%s", port), r)
 }
