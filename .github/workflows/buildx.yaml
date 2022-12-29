@@ -43,15 +43,5 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: setup-nodejs
-        uses: actions/setup-node@v2
-        with:
-          node-version: "14"
-
-      - name: Setup yarn
-        run: npm i -g yarn
-
       - run: |
-          yarn
-      - run: |
-          VERSION=${{ github.sha }} yarn run build:x ${{ inputs.build_env }}
+          VERSION=${{ github.sha }} bash ./scripts/buildx.sh ${{ inputs.build_env }}
