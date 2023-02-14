@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: 798321202204.dkr.ecr.ap-southeast-1.amazonaws.com/wyre-server
   pullPolicy: IfNotPresent
-  tag: 1f976a59d930c7cd103c8a30d3a8dc5c56dbc412
+  tag: 2da4fe920b8f9615e1d3283fa01094f70a9810b8
 
 serviceAccount:
   # Specifies whether a service account should be created
@@ -39,8 +39,8 @@ ingress:
 
 resources: 
   limits:
-    cpu: 1
-    memory: 500Mi
+    cpu: 50m
+    memory: 200Mi
 
 dapr:
   appId: wallet-server

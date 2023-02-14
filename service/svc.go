@@ -10,7 +10,7 @@ import (
 	"strings"
 )
 
-const WYRE_ACCOUNT_ID = "AC_NLVGLA2DCCD"
+const WYRE_ACCOUNT_ID = "AC_9LHLJZUF469"
 
 var networks = map[string]string{
 	"80001": "matic",
